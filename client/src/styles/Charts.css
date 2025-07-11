@@ -1,0 +1,37 @@
+.chart-box {
+  flex: 1 1 48%;
+  min-width: 300px;
+  max-width: 600px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0, 255, 234, 0.05);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.chart-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 16px rgba(0, 255, 234, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.chart-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  color: white;
+  flex: 1;
+  min-width: 350px;
+}  
+
+.chart-box.full-width {
+  width: 41%;
+  max-width: none;
+  
+}

@@ -1,0 +1,37 @@
+.trial-container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fff;
+}
+
+.trial-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+  color: #f8f8f8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.trial-table th,
+.trial-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.trial-warning {
+  margin-top: 20px;
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 16px;
+}
