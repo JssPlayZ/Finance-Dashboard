@@ -15,7 +15,7 @@ function Dashboard() {
     if (!user) return;
 
     axios
-      .get(`http://localhost:5000/api/ledger/summary/${user.id}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/ledger/summary/${user.id}`)
       .then((res) => {
         setSummary(res.data);
         setChartData([
@@ -24,13 +24,13 @@ function Dashboard() {
         ]);
 
         axios
-          .get(`http://localhost:5000/api/ledger/category-summary/${user.id}`)
+          .get(`${import.meta.env.VITE_API_URL}/api/ledger/category-summary/${user.id}`)
           .then((res) => setBarData(res.data))
           .catch((err) => console.error("Category summary fetch error:", err));
       })
       .catch((err) => console.error("Failed to load dashboard data:", err));
 
-    axios.get(`http://localhost:5000/api/ledger/line-summary/${user.id}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/ledger/line-summary/${user.id}`)
       .then((res) => setLineData(res.data))
       .catch((err) => console.error("Line summary error:", err));
   }, []);

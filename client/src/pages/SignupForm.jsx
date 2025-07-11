@@ -13,7 +13,7 @@ function SignupForm({ onSuccess }) {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/signup`, formData);
       alert("Signup successful!");
       onSuccess(); // Switch to login
     } catch (err) {

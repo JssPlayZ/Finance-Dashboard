@@ -29,7 +29,7 @@ function Ledger() {
 
   const fetchEntries = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/ledger/user/${id}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ledger/user/${id}`);
       const sorted = res.data.sort((a, b) => new Date(b.date) - new Date(a.date));
       setEntries(res.data);
     } catch (err) {
@@ -52,7 +52,7 @@ function Ledger() {
 
     try {
       if (isEditing) {
-        const res = await axios.put(`http://localhost:5000/api/ledger/${editId}`, {
+        const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/ledger/${editId}`, {
           ...form,
           userId,
         });
@@ -64,7 +64,7 @@ function Ledger() {
         setIsEditing(false);
         setEditId(null);
       } else {
-        const res = await axios.post("http://localhost:5000/api/ledger/add", {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/ledger/add`, {
           ...form,
           userId,
         });
@@ -102,7 +102,7 @@ function Ledger() {
     if (!window.confirm("Are you sure you want to delete this entry?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/ledger/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/ledger/${id}`);
       setEntries(entries.filter((entry) => entry._id !== id));
       toast.success("Entry deleted successfully");
     } catch (err) {

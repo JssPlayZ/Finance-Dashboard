@@ -13,7 +13,7 @@ function BalanceSheet() {
 
     const fetchBalanceSheet = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/ledger/balance-sheet/${user.id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ledger/balance-sheet/${user.id}`);
         setAssets(res.data.assets);
         setLiabilities(res.data.liabilities);
 

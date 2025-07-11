@@ -12,7 +12,7 @@ function TrialBalance() {
 
     const fetchTrialBalance = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/ledger/trial-balance/${user.id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/ledger/trial-balance/${user.id}`);
         setData(res.data);
 
         // Calculate grand totals
